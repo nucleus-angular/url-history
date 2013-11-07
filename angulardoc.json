@@ -1,0 +1,19 @@
+{
+  "name": "Nucleus Angular URL History",
+  "description": "Nucleus Angular URL History",
+  "version": "0.3.0",
+  "options": {
+    "outdir": "./docs",
+    "jsonDir": "json",
+    "webDir": "web",
+    "paths": [
+      "."
+    ],
+    "ignorePaths": [
+      "docs",
+      "components",
+      "karma",
+      "tests"
+    ]
+  }
+}

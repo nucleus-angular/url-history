@@ -1,0 +1,8 @@
+{
+  "name": "nucleus-angular-url-history",
+  "version": "0.3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "unstable-angular-complete": "1.2.0rc3"
+  }
+}
