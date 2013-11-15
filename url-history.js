@@ -45,6 +45,8 @@ angular.module('nag.urlHistory', [])
         $location.path(lastUrls[0]);
         $location.replace();
 
+        //moving backwards is useful so if the urse then also hits the back button, they will go to the previous page as expected instead of the current page
+        //appearing to reload
         if(moveBackwards === true) {
           return this.goBack();
         }
