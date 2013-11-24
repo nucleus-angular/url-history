@@ -1,11 +1,11 @@
 /**
  * URL History Service
  *
- * @module nag
- * @ngservice urlHistory
+ * @module nag.urlHistory
+ * @ngservice nagUrlHistory
  */
 angular.module('nag.urlHistory', [])
-.factory('urlHistory', [
+.factory('nagUrlHistory', [
   '$location',
   '$timeout',
   function($location, $timeout) {
