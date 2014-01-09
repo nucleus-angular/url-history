@@ -7,8 +7,7 @@
 angular.module('nag.urlHistory', [])
 .factory('nagUrlHistory', [
   '$location',
-  '$timeout',
-  function($location, $timeout) {
+  function($location) {
     var lastUrls = [];
 
     return {
@@ -78,8 +77,7 @@ angular.module('nag.urlHistory', [])
        * @returns {urlHistory} Instance of self
        */
       goTo: function(url) {
-        //the $timeout ensures that the browser history is cleaned up
-        $timeout(function(){location.href = url;}, 0);
+        $location.replace().url(url)
       }
     };
   }
