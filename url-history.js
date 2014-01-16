@@ -7,7 +7,14 @@
 angular.module('nag.urlHistory', [])
 .factory('nagUrlHistory', [
   '$location',
-  function($location) {
+  '$window',
+  function($location, $window) {
+    /**
+     * List of the last urls being stored
+     *
+     * @property lastUrls
+     * @type {string[]}
+     */
     var lastUrls = [];
 
     return {
@@ -22,7 +29,6 @@ angular.module('nag.urlHistory', [])
       addCurrent: function() {
         lastUrls.push($location.url());
 
-        //we only need to keep that last 2 urls
         while(lastUrls.length > 2) {
           lastUrls.shift();
         }
@@ -44,8 +50,6 @@ angular.module('nag.urlHistory', [])
         $location.path(lastUrls[0]);
         $location.replace();
 
-        //moving backwards is useful so if the urse then also hits the back button, they will go to the previous page as expected instead of the current page
-        //appearing to reload
         if(moveBackwards === true) {
           return this.goBack();
         }
@@ -62,7 +66,7 @@ angular.module('nag.urlHistory', [])
        * @returns {urlHistory} Instance of self
        */
       goBack: function() {
-        window.history.back();
+        $window.history.back();
 
         return this;
       },
@@ -77,7 +81,7 @@ angular.module('nag.urlHistory', [])
        * @returns {urlHistory} Instance of self
        */
       goTo: function(url) {
-        $location.replace().url(url)
+        $window.location.href = url;
       }
     };
   }
