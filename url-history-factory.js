@@ -4,7 +4,7 @@
  * @module nag.urlHistory
  * @ngservice nagUrlHistory
  */
-angular.module('nag.urlHistory', [])
+angular.module('nag.urlHistory')
 .factory('nagUrlHistory', [
   '$location',
   '$window',
