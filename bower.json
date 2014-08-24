@@ -1,6 +1,6 @@
 {
   "name": "nucleus-angular-url-history",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "dependencies": {},
   "devDependencies": {
     "angular": "1.3.x",
